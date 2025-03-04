@@ -1,26 +1,26 @@
-# 🎬 IMDb-ishh Clone  
+# 🎬 IMDb-ishh Clone
 
-Ever wanted an **IMDb-like** experience but with **your own personalized movie recommendations**? Welcome to **IMDb-ishh Clone**! 🏆  
+Ever wanted an **IMDb-like** experience but with **your own personalized movie recommendations**? Welcome to **IMDb-ishh Clone**! 🏆
 
 This **React & Vite-powered** project lets you:  
 ✅ Browse **popular & trending** movies 🎥  
 ✅ Add movies to your **watchlist** 🍿  
-✅ Get **AI-powered** movie recommendations 🎭  
+✅ Get **AI-powered** movie recommendations 🎭
 
-And best of all, it's **fast, responsive, and fun!** 🚀  
+And best of all, it's **fast, responsive, and fun!** 🚀
 
 ---
 
-## 🌟 Features  
+## 🌟 Features
 
 🎥 **Home** – Browse trending movies with a stylish banner.  
 📌 **Watchlist** – Add/remove movies, sort by ratings/popularity, and filter by genre.  
 🔮 **Find Me a Movie!** – AI-generated **personalized recommendations** (powered by Gemini API).  
-📱 **Responsive Design** – Works smoothly on **both desktop & mobile**.  
+📱 **Responsive Design** – Works smoothly on **both desktop & mobile**.
 
 ---
 
-## 🛠️ Technologies Used  
+## 🛠️ Technologies Used
 
 🚀 **React** – For building the UI.  
 ⚡ **Vite** – Blazing-fast development & builds.  
@@ -28,13 +28,13 @@ And best of all, it's **fast, responsive, and fun!** 🚀
 🔗 **Axios** – Fetches movie data from APIs.  
 🔄 **React Router** – Enables smooth navigation.  
 🎬 **TMDB API** – Fetches real-time movie data.  
-🤖 **Gemini API** – Generates AI-powered recommendations.  
+🤖 **Gemini API** – Generates AI-powered recommendations.
 
 ---
 
-## 🚀 Getting Started  
+## 🚀 Getting Started
 
-Clone the repo and get rolling! 🎬  
+Clone the repo and get rolling! 🎬
 
 ```bash
 git clone https://github.com/ronijames008/IMDb-ishh-Clone.git
@@ -77,7 +77,7 @@ npm run preview  # Preview the production build
 
 ## 🔮 How AI-Powered Recommendations Work
 
-🤖 The Gemini API helps suggest movies similar to your watchlist! Here's how:  
+🤖 The Gemini API helps suggest movies similar to your watchlist! Here's how:
 
 1️⃣ Extracts Titles & Genres from your watchlist.  
 2️⃣ Sends a prompt to Gemini AI for movie recommendations.  
@@ -86,27 +86,25 @@ npm run preview  # Preview the production build
 
 ---
 
-## 💡 Seeking Advice from Frontend Pros!  
+## 💡 Seeking Advice from Frontend Pros!
 
-I'm continuously working on improving my skills, and I'd love to hear feedback from experienced frontend developers!  
+I'm continuously working on improving my skills, and I'd love to hear feedback from experienced frontend developers!
 
 🔹 **How can I improve the UI/UX?**  
 🔹 **Are there any best practices I should follow in React & Vite?**  
-🔹 **How can I optimize performance or state management?**  
+🔹 **How can I optimize performance or state management?**
 
-If you're a frontend dev, feel free to **open an issue, leave suggestions, or create a pull request!** Your insights would be greatly appreciated. 🚀  
+If you're a frontend dev, feel free to **open an issue, leave suggestions, or create a pull request!** Your insights would be greatly appreciated. 🚀
 
 ---
 
-## 🌟 Star This Repo! 
+## 🌟 Star This Repo!
 
-If you like **IMDb-ishh Clone**, don’t forget to **⭐ star this repo** on GitHub!  
+If you like **IMDb-ishh Clone**, don’t forget to **⭐ star this repo** on GitHub!
 
 ---
 
 ## 📜 License
 
 🛑 Currently, this project has no license, meaning it's not open for public use or modifications.  
-💡 If you'd like to contribute or use this project, feel free to reach out!  
-
-
+💡 If you'd like to contribute or use this project, feel free to reach out!
