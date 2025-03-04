@@ -17,6 +17,7 @@ dist-ssr
 *.local
 *.test.jsx
 setupTests.js
+screenshots
 
 # Editor directories and files
 .vscode/*
