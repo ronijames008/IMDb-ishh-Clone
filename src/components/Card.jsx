@@ -22,12 +22,12 @@ function Card({ obj }) {
           <i
             // Black Ribbon
             onClick={() => handleAddToWatchlist(obj)}
-            className="fa-solid fa-bookmark absolute right-1 text-base text-[rgba(55,65,81,0.6)] transition delay-50 duration-200 ease-in-out hover:-translate-y-1 hover:scale-110 hover:cursor-pointer sm:right-1.5 sm:text-lg md:right-2 md:text-xl lg:text-xl xl:right-3 xl:text-2xl"
+            className="fa-solid fa-bookmark absolute right-2 text-xl text-[rgba(55,65,81,0.6)] transition delay-50 duration-200 ease-in-out hover:-translate-y-1 hover:scale-110 hover:cursor-pointer sm:right-3 sm:text-3xl md:right-2 md:text-4xl lg:text-4xl xl:right-3 xl:text-3xl"
             title="Add to Watchlist"
           >
             <i
               // white plus
-              className="fa-solid fa-plus absolute inset-x-0 top-1/10 mx-auto text-center text-[0.5rem] sm:text-xs md:text-xs lg:text-sm xl:text-sm"
+              className="fa-solid fa-plus absolute inset-x-0 top-1/10 mx-auto text-center text-xs sm:text-base md:top-1/5 md:text-base lg:text-sm xl:text-sm"
               style={{ color: "#ffffff" }}
             ></i>
           </i>
@@ -35,7 +35,7 @@ function Card({ obj }) {
           <i
             // yellow ribbon
             onClick={() => handleRemoveFromWatchlist(obj)}
-            className="fa-solid fa-bookmark absolute right-1 text-base transition delay-50 duration-200 ease-in-out hover:-translate-y-1 hover:scale-110 hover:cursor-pointer sm:right-1.5 sm:text-lg md:right-2 md:text-xl lg:text-xl xl:right-3 xl:text-2xl"
+            className="fa-solid fa-bookmark absolute right-2 text-xl transition delay-50 duration-200 ease-in-out hover:-translate-y-1 hover:scale-110 hover:cursor-pointer sm:right-3 sm:text-3xl md:right-2 md:text-4xl lg:text-4xl xl:right-3 xl:text-3xl"
             style={{ color: "#F5C518" }}
             title="Remove from Watchlist"
           ></i>

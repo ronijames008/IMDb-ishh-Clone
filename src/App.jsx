@@ -64,19 +64,23 @@ function App() {
         }}
       >
         <BrowserRouter>
-          <Navbar />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Home />
-                </>
-              }
-            />
-            <Route path="/watchlist" element={<Watchlist />} />
-            <Route path="/find" element={<FindMovie />} />
-          </Routes>
+          <div className="flex min-h-screen flex-col bg-gray-900">
+            <Navbar />
+            <div className="flex-grow pt-14 sm:pt-14 md:pt-16 lg:pt-16 xl:pt-16">
+              <Routes>
+                <Route
+                  path="/"
+                  element={
+                    <>
+                      <Home />
+                    </>
+                  }
+                />
+                <Route path="/watchlist" element={<Watchlist />} />
+                <Route path="/find" element={<FindMovie />} />
+              </Routes>
+            </div>
+          </div>
         </BrowserRouter>
       </WatchlistContext.Provider>
     </>

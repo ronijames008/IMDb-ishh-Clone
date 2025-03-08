@@ -44,7 +44,7 @@ function Navbar() {
   }, []);
 
   return (
-    <nav className="flex w-full items-center justify-between bg-gradient-to-r from-gray-900 via-gray-800 to-black p-2 lg:p-3">
+    <nav className="fixed top-0 left-0 z-50 flex w-full items-center justify-between bg-gradient-to-r from-gray-900 via-gray-800 to-black p-2 lg:p-3">
       {/* Logo with responsive sizing */}
       <img
         className="h-8 w-auto sm:h-10 md:h-12 lg:w-auto xl:w-[6%] xl:rounded-xs"
