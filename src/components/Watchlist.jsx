@@ -74,7 +74,7 @@ function Watchlist() {
           <i className="fas fa-search absolute top-1/2 left-3 -translate-y-1/2 text-xs text-gray-700 sm:left-3.5 sm:text-sm md:left-4 md:text-base"></i>
           <input
             type="text"
-            className="h-9 w-full rounded-md bg-white px-8 py-2 text-xs shadow-md focus:ring-2 focus:ring-[#F5C518] focus:outline-none sm:h-10 sm:text-sm md:h-11 md:py-3 md:text-base lg:h-12"
+            className="h-9 w-full rounded-md bg-white px-8 py-2 text-xs shadow-md focus:ring-2 focus:ring-[#F5C518] focus:outline-none sm:h-10 sm:text-sm md:h-11 md:px-10 md:py-3 md:text-base lg:h-12"
             onChange={handleSearch}
             placeholder="Search watchlist..."
             value={search}
@@ -227,7 +227,7 @@ function Watchlist() {
 
       {/* Confirmation Modal */}
       {showConfirmModal && (
-        <div className="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-black p-4">
+        <div className="bg-opacity-50 fixed inset-0 z-50 flex items-center justify-center bg-[rgba(0,0,0,0.6)] p-4">
           <div className="w-full max-w-md rounded-lg bg-gray-800 p-6 shadow-lg">
             <h3 className="mb-4 text-lg font-medium text-white">
               Clear Watchlist
