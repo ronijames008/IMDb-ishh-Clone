@@ -3,6 +3,7 @@ import Card from "./Card";
 import axios from "axios";
 import Pagination from "./Pagination";
 import ScrollUp from "./ScrollUp";
+import { scrollToTop } from "../utils/utils";
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 function Movies() {
@@ -28,6 +29,7 @@ function Movies() {
       .catch((err) => {
         console.error(`Inside Movies API cannot be fetched. Error ${err}`);
       });
+    scrollToTop();
   }, [page]);
 
   return (

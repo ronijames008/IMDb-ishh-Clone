@@ -1,10 +1,7 @@
+import { scrollToTop } from "../utils/utils";
+
 function ScrollUp() {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+  scrollToTop();
   return (
     <button
       aria-label="Scroll up"
