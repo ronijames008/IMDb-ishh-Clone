@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, memo } from "react";
 import { WatchlistContext } from "./Contexts";
 
 function Card({ obj }) {
@@ -60,4 +60,4 @@ function Card({ obj }) {
   );
 }
 
-export default Card;
+export default memo(Card);

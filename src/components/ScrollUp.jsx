@@ -1,7 +1,7 @@
 import { scrollToTop } from "../utils/utils";
 
 function ScrollUp() {
-  scrollToTop();
+  // scrollToTop();
   return (
     <button
       aria-label="Scroll up"
