@@ -2,20 +2,21 @@ import Banner from "./Banner";
 import { BannerContext } from "./Contexts";
 import Movies from "./Movies";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef, useCallback } from "react";
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 function Home() {
   const [bannerPosters, setBannerPosters] = useState([]);
-
+  const bl = bannerPosters.length;
   const [index, setIndex] = useState(0);
+  const timeRef = useRef(null);
 
-  const handleNextPoster = () => {
-    index < bannerPosters.length - 1 && setIndex(index + 1);
-  };
-  const handlePrevPoster = () => {
-    index > 0 && setIndex(index - 1);
-  };
+  const handleNextPoster = useCallback(() => {
+    setIndex((index) => (index + 1) % bl);
+  }, [bl]);
+  const handlePrevPoster = useCallback(() => {
+    setIndex(((index) => index - 1 + bl) % bl);
+  }, [bl]);
   useEffect(() => {
     axios
       .get(
@@ -29,6 +30,16 @@ function Home() {
       .catch((err) => console.error(`ErrorMoviesBannerPoster ${err}`));
   }, []);
 
+  useEffect(() => {
+    timeRef.current = setInterval(() => {
+      handleNextPoster();
+    }, 5000);
+
+    return () => {
+      clearInterval(timeRef.current);
+    };
+  });
+
   return (
     <div
       className="w-screen bg-contain bg-no-repeat"
@@ -39,7 +50,12 @@ function Home() {
       }}
     >
       <BannerContext.Provider
-        value={{ handleNextPoster, handlePrevPoster, index, bannerPosters }}
+        value={{
+          handleNextPoster,
+          handlePrevPoster,
+          index,
+          bannerPosters,
+        }}
       >
         <Banner />
       </BannerContext.Provider>

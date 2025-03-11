@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { BannerContext } from "./Contexts";
-import { handleKeyDown } from "../utils/utils";
 
 function Banner() {
   const { handleNextPoster, handlePrevPoster, index, bannerPosters } =
@@ -21,18 +20,21 @@ function Banner() {
         {/* Popular Tag */}
         <div
           style={{ color: "#F5C518" }}
-          className="fa-fade text-xs font-medium sm:text-sm md:text-base lg:text-lg xl:text-xl"
+          className="fa-fade text-xs font-medium sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl"
         >
           <i className="fa-solid fa-fire mr-0.5"></i>Popular
         </div>
 
         {/* Movie Title */}
-        <div className="mt-1 text-xl font-bold text-white sm:mt-2 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl">
+        <div className="mt-1 text-xl font-bold text-white sm:mt-2 sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl">
           {bannerPosters[index] && bannerPosters[index].title}
         </div>
 
         {/* Movie Overview */}
-        <div className="mt-2 line-clamp-2 overflow-hidden text-xs tracking-tighter overflow-ellipsis text-gray-200 sm:mt-3 sm:line-clamp-3 sm:text-xs md:mt-4 md:text-sm lg:text-base xl:mt-6.5 xl:text-lg">
+        <div
+          title={bannerPosters[index] && bannerPosters[index].overview}
+          className="mt-2 line-clamp-2 overflow-hidden text-xs tracking-tighter overflow-ellipsis text-gray-200 sm:mt-3 sm:line-clamp-3 sm:text-xs md:mt-4 md:text-sm lg:text-base xl:mt-6.5 xl:text-base 2xl:text-2xl"
+        >
           {bannerPosters[index] && bannerPosters[index].overview}
         </div>
       </div>
