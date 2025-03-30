@@ -37,7 +37,7 @@ function FindMovie() {
     try {
       // Initialize Gemini API
       const genAI = new GoogleGenerativeAI(`${API_KEY_2}`);
-      const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+      const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
 
       // Extract movie titles and genres from watchlist
       const watchlistTitles = watchlist.map((movie) => movie.title);
