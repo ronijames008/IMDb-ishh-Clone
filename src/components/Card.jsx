@@ -2,7 +2,9 @@ import { useContext, memo } from "react";
 import { WatchlistContext } from "./Contexts";
 
 function Card({ obj }) {
-  const year = obj.release_date.match(/^.{4}/)[0];
+  const year = obj.release_date
+    ? obj.release_date.match(/^.{4}/)?.[0]
+    : "Unknown";
   const { handleAddToWatchlist, handleRemoveFromWatchlist, watchlist } =
     useContext(WatchlistContext);
 
