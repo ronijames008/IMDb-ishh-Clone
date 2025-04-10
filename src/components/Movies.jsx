@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import Card from "./Card";
-import axios from "axios";
 import Pagination from "./Pagination";
 import ScrollUp from "./ScrollUp";
 import { scrollToTop } from "../utils/utils";
-const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+import getMovies from "../utils/getMovies";
 
 function Movies() {
   const [movies, setMovies] = useState([]);
@@ -19,12 +18,9 @@ function Movies() {
     }
   };
   useEffect(() => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}&language=en-US&page=${page}`,
-      )
+    getMovies(page)
       .then((response) => {
-        setMovies(response.data.results);
+        setMovies(response.results);
       })
       .catch((err) => {
         console.error(`Inside Movies API cannot be fetched. Error ${err}`);

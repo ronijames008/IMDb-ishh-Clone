@@ -10,4 +10,13 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: './src/setupTests.js', // Create this file if needed
   },
+  // server: {
+  //   proxy: {
+  //     '/.netlify/functions': {
+  //       target: 'http://localhost:9999', // Where your functions are served
+  //       changeOrigin: true,
+  //       // rewrite: (path) => path.replace(/^\/\.netlify\/functions/, ''),
+  //     },
+  //   },
+  // },
 });

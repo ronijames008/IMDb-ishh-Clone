@@ -1,9 +1,7 @@
 import { useState, useContext } from "react";
 import { WatchlistContext } from "./Contexts";
-import { GoogleGenerativeAI } from "@google/generative-ai";
-import axios from "axios";
-const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
-const API_KEY_2 = import.meta.env.VITE_GEMINI_API_KEY;
+import getMovieDetails from "../utils/getMovieDetails";
+import getAiPromptResponse from "../utils/getAiPromptResponse";
 
 function FindMovie() {
   const { watchlist } = useContext(WatchlistContext);
@@ -13,14 +11,10 @@ function FindMovie() {
 
   const fetchMovieDetails = async (title) => {
     try {
-      const response = await axios.get(
-        `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(
-          title,
-        )}&language=en-US&page=1`,
-      );
+      const response = await getMovieDetails(title);
 
-      if (response.data.results && response.data.results.length > 0) {
-        return response.data.results[0];
+      if (response.results && response.results.length > 0) {
+        return response.results[0];
       }
       return null;
     } catch (error) {
@@ -35,10 +29,6 @@ function FindMovie() {
     setRecommendations([]);
 
     try {
-      // Initialize Gemini API
-      const genAI = new GoogleGenerativeAI(`${API_KEY_2}`);
-      const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
-
       // Extract movie titles and genres from watchlist
       const watchlistTitles = watchlist.map((movie) => movie.title);
       const movieInfo = watchlist.map((movie) => ({
@@ -50,8 +40,8 @@ function FindMovie() {
       const prompt = `Based on these movies: ${JSON.stringify(movieInfo)}, recommend exactly 5 movies that are similar in style, tone, or genre. Important: Do NOT include any of these movies in your recommendations: ${watchlistTitles.join(", ")}. Return ONLY a JSON array of 5 movie titles, nothing else. Format example: ["Movie 1", "Movie 2", "Movie 3", "Movie 4", "Movie 5"]`;
 
       // Generate recommendations from Gemini
-      const result = await model.generateContent(prompt);
-      const responseText = result.response.text();
+      const responseText = await getAiPromptResponse(prompt);
+      // console.log("Response from Gemini:", responseText);
 
       // Parse the recommendations
       let recommendedMovies = [];

@@ -1,9 +1,8 @@
+import getBannerPosters from "../utils/getBannerPosters";
 import Banner from "./Banner";
 import { BannerContext } from "./Contexts";
 import Movies from "./Movies";
-import axios from "axios";
 import { useEffect, useState, useRef, useCallback } from "react";
-const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
 function Home() {
   const [bannerPosters, setBannerPosters] = useState([]);
@@ -18,13 +17,10 @@ function Home() {
     setIndex(((index) => index - 1 + bl) % bl);
   }, [bl]);
   useEffect(() => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`,
-      )
+    getBannerPosters()
       .then((popular) => {
-        if (popular.data.results) {
-          setBannerPosters(popular.data.results);
+        if (popular.results) {
+          setBannerPosters(popular.results);
         }
       })
       .catch((err) => console.error(`ErrorMoviesBannerPoster ${err}`));

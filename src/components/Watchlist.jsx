@@ -1,8 +1,7 @@
-import axios from "axios";
 import { useState, useEffect, useContext } from "react";
 import { WatchlistContext } from "./Contexts";
 import ScrollUp from "./ScrollUp";
-const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+import getGenres from "../utils/getGenres";
 
 function Watchlist() {
   const [search, setSearch] = useState("");
@@ -35,14 +34,11 @@ function Watchlist() {
   };
 
   useEffect(() => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}&language=en`,
-      )
+    getGenres()
       .then((result) => {
-        if (result.data.genres) {
+        if (result.genres) {
           setGenres(
-            result.data.genres.reduce((acc, currItem) => {
+            result.genres.reduce((acc, currItem) => {
               acc[currItem.id] = currItem.name;
               return acc;
             }, {}),

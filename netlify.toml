@@ -1,0 +1,7 @@
+# netlify.toml
+
+[functions]
+  directory = "netlify/functions"   # For production deploys
+
+[dev]
+  functions = "netlify/functions"   # For local development
